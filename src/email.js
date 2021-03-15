@@ -10,13 +10,14 @@ let sendEmail = async function () {
             pass: process.env.password
         }
     });
-    await transporter.sendMail({
+    let promise = await transporter.sendMail({
         to: "vishal.vishalmishra.mishra2@gmail.com",
         subject: "Freelancing Client",
         text: "Hello world?",
         html: "<b>Hello world?</b>",
     });
     console.log("Email sent");
+    return promise;
 }
 
 exports.sendEmail = sendEmail;

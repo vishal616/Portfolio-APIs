@@ -7,10 +7,11 @@ const router = express.Router();
 
 
 router.get("/", (req, res) => {
-    email.sendEmail();
-    res.json({
-        hello: "hi!"
-    });
+    email.sendEmail().then(()=>{
+        return res.json({
+            success: 'Email has been sent successfully'
+        });
+    })
 });
 
 
