@@ -1,4 +1,4 @@
-import {sendEmail} from "./email";
+const email = require('./email');
 
 const express = require('express');
 const app = express();
@@ -7,10 +7,10 @@ const router = express.Router();
 
 
 router.get("/", (req, res) => {
-    sendEmail();
-    // res.json({
-    //     hello: "hi!"
-    // });
+    email.sendEmail();
+    res.json({
+        hello: "hi!"
+    });
 });
 
 
