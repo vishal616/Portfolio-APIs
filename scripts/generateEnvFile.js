@@ -1,7 +1,2 @@
 const fs = require('fs')
-fs.writeFileSync('../.env',
-    `API_KEY=${process.env.API_KEY}
-fromEmail=${process.env.fromEmail}
-fromPassword=${process.env.fromPassword}
-sendToEmail=${process.env.sendToEmail}
-    `)
+fs.writeFileSync('../.env', `fromEmail=${process.env.fromEmail}\nfromPassword=${process.env.fromPassword}\nsendToEmail=${process.env.sendToEmail}`)
