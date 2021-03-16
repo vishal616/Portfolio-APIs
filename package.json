@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/netlify-lambda serve src",
-    "build": "./node_modules/nodemon/bin/nodemon ./scripts/generateEnvFile.js && ./node_modules/.bin/netlify-lambda build src",
+    "build": "./node_modules/nodemon/bin/nodemon ./scripts/generateEnvFile.js && ./node_modules/.bin/netlify-lambda build src"
   },
   "repository": {
     "type": "git",
