@@ -13,9 +13,6 @@ app.use(
 app.use(bodyParser.json())
 
 app.post("/sendEmail", (req, res) => {
-    console.log('coming here')
-    console.log(req.body);
-    console.log(process.env.fromEmail, process.env.fromPassword, process.env.sendToEmail);
     email.sendEmail(req.body).then(()=>{
         return res.json({
             success: 'Email has been sent successfully'
