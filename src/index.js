@@ -1,6 +1,7 @@
 const email = require('./email');
 const bodyParser = require('body-parser')
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 let port = process.env.PORT || 3000;
@@ -9,8 +10,9 @@ app.use(
     bodyParser.urlencoded({
         extended: true,
     })
-)
-app.use(bodyParser.json())
+);
+app.use(bodyParser.json());
+app.use(cors());
 
 app.post("/sendEmail", (req, res) => {
     email.sendEmail(req.body).then(()=>{
