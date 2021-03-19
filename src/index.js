@@ -2,6 +2,9 @@ const email = require('./email');
 const bodyParser = require('body-parser')
 const express = require('express');
 const app = express();
+
+let port = process.env.port || 4500;
+
 app.use(
     bodyParser.urlencoded({
         extended: true,
@@ -22,6 +25,6 @@ app.post("/sendEmail", (req, res) => {
 });
 
 
-app.listen(4500, () => {
-    console.log(`app listening at http://localhost:4500`)
+app.listen(port, () => {
+    console.log(`app listening at http://localhost:${port}`)
 })
